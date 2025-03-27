@@ -180,7 +180,7 @@
         </div>
     </div>
 
-    <canvas id="customized-card" width="540" height="540"></canvas>
+    <canvas id="customized-card" width="3375" height="3375"></canvas>
     <button id="download-btn">تحميل التهنئة</button>
 
     <script>
@@ -191,14 +191,14 @@
 
         function drawCard() {
             img.onload = function () {
-                canvas.width = 570;
-                canvas.height = 570;
+                canvas.width = 3375;
+                canvas.height = 3375;
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                ctx.font = "bold 26px Cairo, sans-serif";
+                ctx.font = "bold 170px Cairo, sans-serif";
                 ctx.fillStyle = "white";
                 ctx.textAlign = "center";
                 ctx.textBaseline = "bottom";
-                ctx.fillText(customText, canvas.width / 2, canvas.height - 135);
+                ctx.fillText(customText, canvas.width / 2, canvas.height - 835);
                 document.getElementById('download-btn').style.display = "block";
             };
             img.src = "https://raw.githubusercontent.com/Joud676/DroneClubEid25/refs/heads/main/Eid25.jpg";
