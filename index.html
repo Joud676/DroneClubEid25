@@ -6,182 +6,305 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تهنئة عيد الفطر - نادي الدرون</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Joud676/DroneClubRamadan/refs/heads/main/droneBG.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background: #ffffff;
-            color: #422e5c;
+            background-color: #f8f5f2;
+            color: #333;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            text-align: center;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
             animation: fadeIn 1s ease-out;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #422e5c;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #6a1b9a;
-            margin: 10px 0 0;
-            font-weight: 400;
-        }
-
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #ddd;
-            max-width: 90%;
-            width: 400px;
-            margin: 20px;
-            animation: fadeIn 1s ease-out 0.5s backwards;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         #drone-club-logo {
             width: 100%;
             max-width: 200px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
-        #form-container {
+        h1 {
+            font-size: 2.5rem;
+            color: #422e5c;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .content-wrapper {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .form-section {
+            flex: 1;
+            max-width: 500px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+        }
+
+        .card-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+            width: 100%;
         }
 
         #custom-text {
-            padding: 12px;
-            border: 2px solid #422e5c;
-            border-radius: 10px;
-            font-size: 16px;
-            text-align: center;
             width: 100%;
             max-width: 300px;
-            background-color: #f9f9f9;
-            color: #422e5c;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
             font-family: 'Cairo', sans-serif;
-        }
-
-        #custom-text::placeholder {
-            color: #999;
-            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+            text-align: center;
         }
 
         #custom-text:focus {
-            border-color: #6a1b9a;
+            border-color: #422e5c;
             outline: none;
-            box-shadow: 0 0 8px rgba(106, 27, 154, 0.3);
+            box-shadow: 0 0 0 3px rgba(66, 46, 92, 0.1);
+            background: white;
         }
 
-        #customize-btn,
-        #download-btn {
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
             background-color: #422e5c;
             color: white;
-            padding: 12px 30px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
             width: 100%;
             max-width: 300px;
             font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            animation: fadeIn 1s ease-out 1s backwards;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
 
-        #customize-btn:hover,
-        #download-btn:hover {
+        .btn:hover {
             background-color: #5a3d7a;
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        #customized-card-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
         }
 
         #customized-card {
-            margin-top: 30px;
-            border: 2px solid #422e5c;
-            border-radius: 15px;
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            animation: fadeIn 1s ease-out 1.5s backwards;
+            display: block;
+            border-radius: 8px;
+            max-width: 100%;
         }
 
         #download-btn {
+            margin-top: 1.5rem;
             display: none;
-            margin-top: 20px;
+            animation: fadeIn 0.5s ease-out;
+            width: 100%;
+            max-width: 300px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
+        .eid-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23422e5c" d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+        }
+
+        .decoration-2 {
+            bottom: 15%;
+            right: 8%;
+            transform: rotate(30deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #422e5c;
+            color: white;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
                 font-size: 2rem;
             }
-
-            header p {
+            
+            .subtitle {
                 font-size: 1rem;
             }
-
+            
             .container {
-                padding: 20px;
+                padding: 1.5rem;
             }
-
-            #custom-text,
-            #customize-btn,
-            #download-btn {
-                width: 100%;
-                max-width: none;
+            
+            #drone-club-logo {
+                max-width: 150px;
+            }
+            
+            .content-wrapper {
+                gap: 2rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <img id="drone-club-logo" src="https://github.com/Joud676/DroneClubEid/blob/main/DroneClubLogo.png?raw=true"
-            alt="Drone Club Logo">
-        <h1>تهنئة عيد الفطر المبارك</h1>
-        <p>صمم تهنئتك المخصصة!</p>
-    </header>
-
     <div class="container">
-        <div id="form-container">
-            <label for="custom-text" style="font-weight: bold; color: #422e5c;">أدخل اسمك</label>
-            <input type="text" id="custom-text" placeholder="الاسم">
-            <button id="customize-btn">صمم تهنئتك</button>
+        <div class="eid-decoration decoration-1"></div>
+        <div class="eid-decoration decoration-2"></div>
+
+        <header>
+            <img id="drone-club-logo" src="https://github.com/Joud676/DroneClubEid/blob/main/DroneClubLogo.png?raw=true" alt="Drone Club Logo">
+            <h1>تهنئة عيد الفطر المبارك</h1>
+            <p class="subtitle">صمم تهنئتك المخصصة واحتفل معنا بهذه المناسبة السعيدة</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="form-section">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="custom-text">أدخل اسمك</label>
+                        <input type="text" id="custom-text" placeholder="اكتب اسمك هنا...">
+                    </div>
+                    <button id="customize-btn" class="btn">صمم تهنئتك</button>
+                </div>
+            </div>
+
+            <div class="card-section">
+                <div id="customized-card-container">
+                    <canvas id="customized-card" width="570" height="570"></canvas>
+                </div>
+                <button id="download-btn" class="btn">تحميل التهنئة</button>
+            </div>
         </div>
     </div>
 
-    <canvas id="customized-card" width="570" height="570"></canvas>
-    <button id="download-btn">تحميل التهنئة</button>
+    <footer>
+        نادي الدرون - كل عام وأنتم بخير © 2025
+    </footer>
 
     <script>
         var canvas = document.getElementById('customized-card');
@@ -194,11 +317,21 @@
                 canvas.width = 570;
                 canvas.height = 570;
                 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                ctx.font = "bold 26px Cairo, sans-serif";
-                ctx.fillStyle = "white";
+                
+                ctx.font = "bold 29px 'Cairo', sans-serif";
+                ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
                 ctx.textAlign = "center";
-                ctx.textBaseline = "bottom"; 
-                ctx.fillText(customText, canvas.width / 2, canvas.height - 155);
+                ctx.textBaseline = "bottom";
+                
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                ctx.shadowBlur = 5;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                
+                ctx.fillText(customText, canvas.width / 2, canvas.height - 147);
+                
+                ctx.shadowColor = 'transparent';
+                
                 document.getElementById('download-btn').style.display = "block";
             };
             img.src = "https://raw.githubusercontent.com/Joud676/DroneClubEid25/refs/heads/main/Eid25.jpg";
@@ -208,16 +341,27 @@
         document.getElementById('customize-btn').addEventListener('click', function () {
             customText = document.getElementById('custom-text').value || "عيد مبارك";
             drawCard();
+            
+            const cardContainer = document.getElementById('customized-card-container');
+            cardContainer.style.animation = 'none';
+            void cardContainer.offsetWidth;
+            cardContainer.style.animation = 'fadeIn 0.5s ease-out';
         });
 
         document.getElementById('download-btn').addEventListener('click', function () {
             var dataURL = canvas.toDataURL("image/jpg");
             var a = document.createElement('a');
             a.href = dataURL;
-            a.download = 'تهنئة ' + customText;
+            a.download = 'تهنئة عيد الفطر - ' + (customText || "نادي الدرون");
             a.click();
+            
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
         });
+
+        drawCard();
     </script>
 </body>
-
 </html>
